@@ -1,0 +1,4 @@
+apiVersion: v1
+description: ODE Segment Collection - A Helm chart for deploying the ODE Segment Collection service
+name: "ode-svc-segment-collection"
+version: 0.1.0

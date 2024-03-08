@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AcyclicaConfigRepository\AcyclicaConfigRepository.csproj" />
+    <ProjectReference Include="..\AcyclicaServiceLibrary\AcyclicaServiceLibrary.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Authorization\Authorization.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Monitoring\Monitoring.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Persistence.Common\Persistence.Common.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Persistence.Mongo\Persistence.Mongo.csproj" />
+    <ProjectReference Include="..\EntityService\EntityService.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Common.Messaging\Status.Common.Messaging.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Common\Status.Common.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.CorridorSpeedEvent.Messaging\Status.CorridorSpeedEvent.Messaging.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.CorridorSpeedEvent\Status.CorridorSpeedEvent.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.SpeedEvent.Messaging\Status.SpeedEvent.Messaging.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Speed\Status.Speed.csproj" />
+  </ItemGroup>
+
+</Project>

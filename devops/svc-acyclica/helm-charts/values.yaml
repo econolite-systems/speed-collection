@@ -1,0 +1,11 @@
+# Service-specific configurations for ode-svc-acyclica
+odeSvcAcyclica:
+  name: ode-svc-acyclica
+  imageRepository: cosysdev.azurecr.io/ode-svc-acyclica
+  service:
+    port: 80
+  ingress:
+    host: api.mound-rd.cosysdev.com
+  kafka:
+    groupId: 'svc-acyclica'
+  resources: {}

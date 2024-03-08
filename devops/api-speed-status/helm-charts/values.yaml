@@ -1,0 +1,11 @@
+# Service-specific configuration for ode-api-speed-status
+odeApiSpeedStatus:
+  name: ode-api-speed-status
+  imageRepository: cosysdev.azurecr.io/ode-api-speed-status
+  service:
+    port: 80
+  ingress:
+    host: speed-status.api.mound-rd.cosysdev.com
+  kafka:
+    groupId: 'api-speed-status'
+  resources: {}

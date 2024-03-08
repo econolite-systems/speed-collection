@@ -1,0 +1,4 @@
+apiVersion: v1
+description: ODE API Speed Status - A Helm chart for deploying the ODE API Speed Status service
+name: "ode-api-speed-status"
+version: 0.1.0

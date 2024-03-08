@@ -1,0 +1,131 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.odeSvcSegmentCollection.name }}
+data:
+  appsettings.Production.json: |
+    {
+      "Authentication": {
+          "Authority": "{{ .Values.url.identity }}"
+      },
+      "Kafka": {
+          "bootstrap": {
+              "servers": "{{ .Values.kafka.server }}"
+          },
+          "ssl": {
+            "ca": "{{.Values.kafka.ca}}",
+            "certificate": "{{.Values.kafka.certificate}}"
+          },
+          "sasl": {
+              "mechanism": "{{.Values.kafka.security.mechanism}}",
+              "username": "{{.Values.kafka.userName}}"
+          },
+          "security": {
+               "protocol": "{{.Values.kafka.security.protocol}}"
+          },
+          "groupId": "{{ .Values.odeSvcSegmentCollection.kafka.groupId }}"
+      },
+      "Mongo": {
+        "DbName": "{{ .Values.mongo.databaseName }}"
+      },
+      "Services": {
+          "Configuration": "{{ .Values.url.transportProtocol }}://{{ .Values.url.apiHost }}/{{ .Values.url.configurationPath }}"
+      },
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.odeSvcSegmentCollection.name }}
+  labels:
+    app: {{ .Values.odeSvcSegmentCollection.name }}
+    chart: {{ .Values.odeSvcSegmentCollection.name }}
+    release: {{ .Release.Name }}
+
+  annotations:
+ 
+spec:
+  revisionHistoryLimit: 0
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.odeSvcSegmentCollection.name }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.odeSvcSegmentCollection.name }}
+     
+        release: {{ .Release.Name }}
+      annotations:
+
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              release: {{ .Release.Name }}
+      imagePullSecrets:
+        - name: {{ .Values.secrets.imagePullSecret }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ .Values.odeSvcSegmentCollection.name }}
+      containers:
+        - name: {{ .Values.odeSvcSegmentCollection.name }}
+          image: "cosysdev.azurecr.io/ode-svc-segment-collection:{{ .Values.odeSvcSegmentCollection.imageTag }}"
+          imagePullPolicy: Always
+          env:
+            - name: Authentication__ClientId
+              valueFrom:
+                secretKeyRef:
+                  name: authentication
+                  key: clientId
+            - name: Authentication__ClientSecret
+              valueFrom:
+                secretKeyRef:
+                  name: authentication
+                  key: clientSecret
+            - name: Kafka__sasl__password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.kafka.userName }}
+                  key: password
+            - name: ConnectionStrings__Mongo
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-cs
+                  key: MongoRWConnectionString
+          volumeMounts:
+            - name: config
+              mountPath: /app/appsettings.Production.json
+              subPath: appsettings.Production.json
+              readOnly: true
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources:
+{{ toYaml .Values.odeSvcSegmentCollection.resources | indent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.odeSvcSegmentCollection.name }}
+  labels:
+    app: {{ .Values.odeSvcSegmentCollection.name }}
+    chart: {{ .Values.odeSvcSegmentCollection.name }}
+    release: {{ .Release.Name }}
+ 
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ .Values.odeSvcSegmentCollection.name }}
+    release: {{ .Release.Name }}

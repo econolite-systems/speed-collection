@@ -1,0 +1,115 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.odeApiSpeedStatus.name }}
+data:
+  appsettings.Production.json: |
+    {
+      "Authentication": {
+          "Authority": "{{ .Values.url.identity }}"
+      },
+      "Kafka": {
+          "bootstrap": {
+              "servers": "{{ .Values.kafka.server }}"
+          },
+          "ssl": {
+            "ca": "{{.Values.kafka.ca}}",
+            "certificate": "{{.Values.kafka.certificate}}"
+          },
+          "sasl": {
+              "mechanism": "{{.Values.kafka.security.mechanism}}",
+              "username": "{{.Values.kafka.userName}}"
+          },
+          "security": {
+               "protocol": "{{.Values.kafka.security.protocol}}"
+          },
+          "groupId": "{{ .Values.odeApiSpeedStatus.kafka.groupId }}"
+      }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.odeApiSpeedStatus.name }}
+  labels:
+    app: {{ .Values.odeApiSpeedStatus.name }}
+    chart: {{ .Values.odeApiSpeedStatus.name }}
+    release: {{ .Release.Name }}
+
+  annotations:
+ 
+spec:
+  revisionHistoryLimit: 0
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.odeApiSpeedStatus.name }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.odeApiSpeedStatus.name }}
+     
+        release: {{ .Release.Name }}
+      annotations:
+
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              release: {{ .Release.Name }}
+      imagePullSecrets:
+        - name: {{ .Values.secrets.imagePullSecret }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ .Values.odeApiSpeedStatus.name }}
+      containers:
+        - name: {{ .Values.odeApiSpeedStatus.name }}
+          image: "cosysdev.azurecr.io/ode-api-speed-status:{{ .Values.odeApiSpeedStatus.imageTag }}"
+          imagePullPolicy: Always
+          env:
+            - name: Kafka__sasl__password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.kafka.userName }}
+                  key: password
+            - name: ConnectionStrings__Redis
+              valueFrom:
+                secretKeyRef:
+                  name: redis-cs
+                  key: RedisConnection
+          volumeMounts:
+            - name: config
+              mountPath: /app/appsettings.Production.json
+              subPath: appsettings.Production.json
+              readOnly: true
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources:
+{{ toYaml .Values.odeApiSpeedStatus.resources | indent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.odeApiSpeedStatus.name }}
+  labels:
+    app: {{ .Values.odeApiSpeedStatus.name }}
+    chart: {{ .Values.odeApiSpeedStatus.name }}
+    release: {{ .Release.Name }}
+ 
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ .Values.odeApiSpeedStatus.name }}
+    release: {{ .Release.Name }}

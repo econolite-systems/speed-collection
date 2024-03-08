@@ -1,0 +1,4 @@
+apiVersion: v1
+description: ODE Acyclica - A Helm chart for deploying the ODE Acyclica service
+name: "ode-svc-acyclica"
+version: 0.1.0

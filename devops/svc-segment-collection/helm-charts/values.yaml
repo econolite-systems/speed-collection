@@ -1,0 +1,11 @@
+# Service-specific configurations for ode-svc-segment-collection
+odeSvcSegmentCollection:
+  name: ode-svc-segment-collection
+  imageRepository: cosysdev.azurecr.io/ode-svc-segment-collection
+  service:
+    port: 80
+  ingress:
+    host: api.mound-rd.cosysdev.com
+  kafka:
+    groupId: 'svc-segment-collection'
+  resources: {}

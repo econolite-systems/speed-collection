@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AcyclicaConfigRepository\AcyclicaConfigRepository.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Authorization\Authorization.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Extensions\Extensions.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Extensions.AspNet\Extensions.AspNet.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Monitoring\Monitoring.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Monitoring.HealthChecks.Mongo\Monitoring.HealthChecks.Mongo.csproj" />
+    <ProjectReference Include="$(SolutionDir)\common\Monitoring.HealthChecks.Redis\Monitoring.HealthChecks.Redis.csproj" />
+    <ProjectReference Include="..\EntityService\EntityService.csproj" />
+    <ProjectReference Include="..\Service.SpeedStatus\Service.SpeedStatus.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Common.Messaging\Status.Common.Messaging.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Common\Status.Common.csproj" />
+    <ProjectReference Include="$(SolutionDir)\status\Status.Speed\Status.Speed.csproj" />
+  </ItemGroup>
+
+</Project>

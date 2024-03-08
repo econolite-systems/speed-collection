@@ -1,0 +1,5997 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Api.Configuration",
+    "version": "1.0"
+  },
+  "paths": {
+    "/action-set": {
+      "get": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Gets a list of all action sets",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Adds a new action set",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Updates an existing action set",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/action-set/{id}": {
+      "get": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Gets the specified action set",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionSet"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Deletes an action set",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/action-set/entity/{type}/{id}": {
+      "get": {
+        "tags": [
+          "ActionSet"
+        ],
+        "summary": "Gets a list of action sets that have no",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActionSet"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acyclica": {
+      "get": {
+        "tags": [
+          "AcyclicaConfig"
+        ],
+        "summary": "Get the Acyclica Configuration",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AcyclicaConfig"
+        ],
+        "summary": "Create the Acyclica Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AcyclicaConfig"
+        ],
+        "summary": "Update the Acyclica Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AcyclicaConfig"
+        ],
+        "summary": "Delete the Acyclica Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcyclicaConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcyclicaConfigDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/connected-vehicle": {
+      "get": {
+        "tags": [
+          "ConnectedVehicle"
+        ],
+        "summary": "Gets the connected vehicle configs.  There will only be one set of configs.",
+        "responses": {
+          "200": {
+            "description": "Returns connected vehicle configs",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ConnectedVehicle"
+        ],
+        "summary": "Adds a new connected vehicle config.  There can only be one set of configs. If configs already exists this will throw an error.",
+        "requestBody": {
+          "description": "The connected vehicle config to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns connected vehicle config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectedVehicleConfigDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if configs already exist"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ConnectedVehicle"
+        ],
+        "summary": "Updates the existing connected vehicle config",
+        "requestBody": {
+          "description": "The connected vehicle config to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectedVehicleConfigUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns connected vehicle config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if the config could not be updated"
+          }
+        }
+      }
+    },
+    "/connected-vehicle/{id}": {
+      "delete": {
+        "tags": [
+          "ConnectedVehicle"
+        ],
+        "summary": "Deletes the connected vehicle config.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a success code",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Returns nothing if the connected vehicle config were unable to be deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device-managers": {
+      "get": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Get All device managers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DmConfigDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DmConfigDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DmConfigDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Add a device manager",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Update a device manager config",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DmConfigUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device-managers/{id}": {
+      "get": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Get a specified device manager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DmConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Delete a device manager config",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device-managers/{id}/channel": {
+      "post": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Add a channel to a device manager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "device manager id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "channel config",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Update a channel on a device manager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "device manager id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "channel config",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device-managers/{id}/channel/{chId}": {
+      "delete": {
+        "tags": [
+          "DeviceManagers"
+        ],
+        "summary": "Delete a channel from a device manager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "device manager id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "chId",
+            "in": "path",
+            "description": "channel id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/types": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets a list of the entity types",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityTypeId"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityTypeId"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityTypeId"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/all": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets all of the entities",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets the specified entities",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Adds a new entity",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Updates an existing entity",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/{id}": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets the specified entities",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Deletes an entity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/types/{type}": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets entities of a specified type",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/intersection/{id}": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets entities of a specified type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/intersections/query/radius/{miles}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Find intersections within a radius distance of miles.",
+        "parameters": [
+          {
+            "name": "miles",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/query/{type}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Find entities with a type intersecting a route.",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonLineStringFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonLineStringFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonLineStringFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/query/geofence": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Find entities that point is within geofence.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/query/geofence/{type}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Find entities of a type that point is within geofence.",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/types/{type}/parents": {
+      "get": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Gets possible entities of a specified entity type",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/{parent}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Adds a new entity",
+        "parameters": [
+          {
+            "name": "parent",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityNode"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/downstream/{intersections}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Get downstream entities",
+        "parameters": [
+          {
+            "name": "intersections",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities/upstream/{intersections}": {
+      "post": {
+        "tags": [
+          "Entities"
+        ],
+        "summary": "Get upstream entities",
+        "parameters": [
+          {
+            "name": "intersections",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoJsonPointFeature"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entities-sync": {
+      "post": {
+        "tags": [
+          "EntitiesSync"
+        ],
+        "summary": "Sync entities",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntitySync"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntitySync"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntitySync"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/entity-type/sections": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Gets a list of all entity type sections",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entity-type": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Gets a list of all entity types",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Adds a new entity type",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityTypeAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityTypeAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityTypeAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Updates an existing entity type",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityType"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityType"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entity-type/{id}": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Gets the specified type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityType"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Deletes an entity type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition": {
+      "get": {
+        "tags": [
+          "PavementConditionConfig"
+        ],
+        "summary": "Gets the pavement condition configs.  There will only be one set of configs.",
+        "responses": {
+          "200": {
+            "description": "Returns pavement condition configs",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PavementConditionConfig"
+        ],
+        "summary": "Adds a new pavement condition config.  There can only be one set of configs. If configs already exists this will throw an error.",
+        "requestBody": {
+          "description": "The pavement condition config to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns pavement condition config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PavementConditionConfigDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if configs already exist"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PavementConditionConfig"
+        ],
+        "summary": "Updates the existing pavement condition config",
+        "requestBody": {
+          "description": "The pavement condition config to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PavementConditionConfigUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns pavement condition config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if the config could not be updated"
+          }
+        }
+      }
+    },
+    "/pavement-condition/{id}": {
+      "delete": {
+        "tags": [
+          "PavementConditionConfig"
+        ],
+        "summary": "Deletes the pavement condition config.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a success code",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Returns nothing if the pavement condition config were unable to be deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition-status/find": {
+      "get": {
+        "tags": [
+          "PavementConditionStatus"
+        ],
+        "summary": "Find pavement condition statuses",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns pavement condition statuses",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition-status/parse": {
+      "post": {
+        "tags": [
+          "PavementConditionStatus"
+        ],
+        "summary": "Parse File",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns pavement condition statuses",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition-status/import": {
+      "post": {
+        "tags": [
+          "PavementConditionStatus"
+        ],
+        "summary": "Import pavement condition statuses",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition-status/update": {
+      "put": {
+        "tags": [
+          "PavementConditionStatus"
+        ],
+        "summary": "Update pavement condition statuses",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pavement-condition-status/delete": {
+      "delete": {
+        "tags": [
+          "PavementConditionStatus"
+        ],
+        "summary": "Delete pavement condition statuses",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PavementConditionStatusDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PavementConditionStatusDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsu": {
+      "get": {
+        "tags": [
+          "Rsu"
+        ],
+        "summary": "Gets a list of all rsus",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rsu"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rsu"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rsu"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Rsu"
+        ],
+        "summary": "Adds a new rsu",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rsu"
+        ],
+        "summary": "Updates an existing rsu",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rsu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsu/{id}": {
+      "get": {
+        "tags": [
+          "Rsu"
+        ],
+        "summary": "Gets the specified rsu",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rsu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rsu"
+        ],
+        "summary": "Deletes a rsu",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/all": {
+      "get": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree": {
+      "get": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/search/{term}": {
+      "get": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "term",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}": {
+      "get": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}/children": {
+      "get": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/children": {
+      "post": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstanceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstanceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstanceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntityNodeProjection"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}/move-to/{parent}": {
+      "put": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}/copy-to/{parent}": {
+      "put": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}/move-up": {
+      "put": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tree/{instanceId}/move-down": {
+      "put": {
+        "tags": [
+          "Tree"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityNodeProjection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/twilio": {
+      "get": {
+        "tags": [
+          "TwilioConfig"
+        ],
+        "summary": "Get the Twilio Configuration",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TwilioConfig"
+        ],
+        "summary": "Create the Twilio Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TwilioConfig"
+        ],
+        "summary": "Update the Twilio Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TwilioConfig"
+        ],
+        "summary": "Delete the Twilio Configuration",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwilioConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TwilioConfigDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wrong-way-driver": {
+      "get": {
+        "tags": [
+          "WrongWayDriver"
+        ],
+        "summary": "Gets the wrong way driver configs.  There will only be one set of configs.",
+        "responses": {
+          "200": {
+            "description": "Returns wrong way driver configs",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WrongWayDriver"
+        ],
+        "summary": "Adds a new wrong way driver config.  There can only be one set of configs. If configs already exists this will throw an error.",
+        "requestBody": {
+          "description": "The wrong way driver config to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigAdd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigAdd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns wrong way driver config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrongWayDriverConfigDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if configs already exist"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WrongWayDriver"
+        ],
+        "summary": "Updates the existing wrong way driver config",
+        "requestBody": {
+          "description": "The wrong way driver config to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WrongWayDriverConfigUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns wrong way driver config",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Returns an error if the config could not be updated"
+          }
+        }
+      }
+    },
+    "/wrong-way-driver/{id}": {
+      "delete": {
+        "tags": [
+          "WrongWayDriver"
+        ],
+        "summary": "Deletes the wrong way driver config.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a success code",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Returns nothing if the wrong way driver config were unable to be deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActionSet": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "isEnabled": {
+            "type": "boolean"
+          },
+          "statements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Statement"
+            },
+            "nullable": true
+          },
+          "conditionals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Conditional"
+            },
+            "nullable": true
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatementAction"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AcyclicaConfigDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "format": "uuid"
+          },
+          "url": {
+            "type": "string",
+            "description": "Url",
+            "nullable": true
+          },
+          "apiKey": {
+            "type": "string",
+            "description": "ApiKey",
+            "nullable": true
+          },
+          "pollInterval": {
+            "type": "integer",
+            "description": "PollInterval",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "AcyclicaConfigDto"
+      },
+      "AuthenticationProviderType": {
+        "enum": [
+          "None",
+          "MD5",
+          "SHA",
+          "SHA256",
+          "SHA384",
+          "SHA512"
+        ],
+        "type": "string"
+      },
+      "Bearing": {
+        "enum": [
+          "Unknown",
+          "NB",
+          "EB",
+          "SB",
+          "WB",
+          "NEB",
+          "NWB",
+          "SEB",
+          "SWB"
+        ],
+        "type": "string"
+      },
+      "ChannelAdd": {
+        "type": "object",
+        "properties": {
+          "channelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "channelType": {
+            "type": "string",
+            "nullable": true
+          },
+          "protocol": {
+            "type": "string",
+            "nullable": true
+          },
+          "commRequestTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "secondaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tertiaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "adaptivePollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "priorityPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deviceTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxExpectedPacketSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sourceIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourcePort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "broadcastIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollErrorThreshold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollRetries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeFormat": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkTimeInterval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowedTimeDrift": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "signalControllers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ControllerAdd"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChannelDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "channelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "channelType": {
+            "type": "string",
+            "nullable": true
+          },
+          "protocol": {
+            "type": "string",
+            "nullable": true
+          },
+          "commRequestTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "secondaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tertiaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "adaptivePollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "priorityPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deviceTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxExpectedPacketSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sourceIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourcePort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "broadcastIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollErrorThreshold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollRetries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeFormat": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkTimeInterval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowedTimeDrift": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "signalControllers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ControllerDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChannelUpdate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "channelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "channelType": {
+            "type": "string",
+            "nullable": true
+          },
+          "protocol": {
+            "type": "string",
+            "nullable": true
+          },
+          "commRequestTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "secondaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tertiaryPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "adaptivePollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "priorityPollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deviceTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxExpectedPacketSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sourceIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourcePort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "broadcastIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationIPAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollErrorThreshold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollRetries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeFormat": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkTimeInterval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowedTimeDrift": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "signalControllers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ControllerUpdate"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommMode": {
+        "enum": [
+          "Online",
+          "Offline",
+          "Standby"
+        ],
+        "type": "string"
+      },
+      "CommunicationsModelAdd": {
+        "type": "object",
+        "properties": {
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshHostKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "commMode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommBad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommMarginal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommWeightingFactor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommunicationsModelDto": {
+        "type": "object",
+        "properties": {
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshHostKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "commMode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommBad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommMarginal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommWeightingFactor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommunicationsModelUpdate": {
+        "type": "object",
+        "properties": {
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sshHostKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "commMode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommBad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommMarginal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommWeightingFactor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Conditional": {
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectedVehicleConfigAdd": {
+        "type": "object",
+        "properties": {
+          "onlineStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "archiveStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "onlineDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "onlineSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "archivedDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "archivedSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectedVehicleConfigDto": {
+        "type": "object",
+        "properties": {
+          "onlineStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "archiveStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "onlineDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "onlineSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "archivedDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "archivedSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectedVehicleConfigUpdate": {
+        "type": "object",
+        "properties": {
+          "onlineStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "archiveStorageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "onlineDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "onlineSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "archivedDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "archivedSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ControllerAdd": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "subType": {
+            "type": "string",
+            "nullable": true
+          },
+          "communications": {
+            "$ref": "#/components/schemas/CommunicationsModelAdd"
+          },
+          "ftpCredentials": {
+            "$ref": "#/components/schemas/CredentialsModelAdd"
+          },
+          "discoverDynamicObjects": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ControllerDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "subType": {
+            "type": "string",
+            "nullable": true
+          },
+          "communications": {
+            "$ref": "#/components/schemas/CommunicationsModelDto"
+          },
+          "ftpCredentials": {
+            "$ref": "#/components/schemas/CredentialsModelDto"
+          },
+          "discoverDynamicObjects": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ControllerUpdate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "subType": {
+            "type": "string",
+            "nullable": true
+          },
+          "communications": {
+            "$ref": "#/components/schemas/CommunicationsModelUpdate"
+          },
+          "ftpCredentials": {
+            "$ref": "#/components/schemas/CredentialsModelUpdate"
+          },
+          "discoverDynamicObjects": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CorridorsSyncModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "intersections": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CredentialsModelAdd": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "snmpCommunityName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CredentialsModelDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "snmpCommunityName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CredentialsModelUpdate": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "snmpCommunityName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetectorModel": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detectorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bearing": {
+            "$ref": "#/components/schemas/Bearing"
+          },
+          "movement": {
+            "$ref": "#/components/schemas/Movement"
+          },
+          "length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setBack": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "distanceToNextSignal": {
+            "type": "number",
+            "format": "double"
+          },
+          "lanes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "laneNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "phases": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "protectedPhase": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "permittedPhase": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DetectorType"
+          },
+          "advanced": {
+            "type": "boolean"
+          },
+          "phaseData": {
+            "type": "boolean"
+          },
+          "exitDetection": {
+            "type": "boolean"
+          },
+          "turningMovementCount": {
+            "type": "boolean"
+          },
+          "splitFailure": {
+            "type": "boolean"
+          },
+          "redLightMonitor": {
+            "type": "boolean"
+          },
+          "speed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetectorType": {
+        "enum": [
+          "Unknown",
+          "InductiveLoop",
+          "Electrometric",
+          "Video",
+          "RadarFrontal",
+          "RadarSideFire",
+          "Hybrid"
+        ],
+        "type": "string"
+      },
+      "DmConfigAdd": {
+        "type": "object",
+        "properties": {
+          "dmId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChannelAdd"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DmConfigDto": {
+        "type": "object",
+        "properties": {
+          "dmId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChannelDto"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DmConfigUpdate": {
+        "type": "object",
+        "properties": {
+          "dmId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChannelUpdate"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/EntityTypeId"
+          },
+          "jurisdiction": {
+            "$ref": "#/components/schemas/Jurisdiction"
+          },
+          "isCopy": {
+            "type": "boolean"
+          },
+          "isLeaf": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityNode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/EntityTypeId"
+          },
+          "jurisdiction": {
+            "$ref": "#/components/schemas/Jurisdiction"
+          },
+          "isCopy": {
+            "type": "boolean"
+          },
+          "isLeaf": {
+            "type": "boolean"
+          },
+          "parent": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/GeoJsonGeometry"
+          },
+          "geoFence": {
+            "$ref": "#/components/schemas/GeoJsonPolygonFeature"
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "primary": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondary": {
+            "type": "string",
+            "nullable": true
+          },
+          "activeDays": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idMapping": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "controllerType": {
+            "type": "string",
+            "nullable": true
+          },
+          "deviceManager": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "channel": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "commMode": {
+            "$ref": "#/components/schemas/CommMode"
+          },
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sshPort": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sshHostKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "filteredCommBad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommMarginal": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "filteredCommWeightingFactor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "privacyPhrase": {
+            "type": "string",
+            "nullable": true
+          },
+          "retries": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeout": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pollRate": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "authentication": {
+            "type": "string",
+            "nullable": true
+          },
+          "privacy": {
+            "type": "string",
+            "nullable": true
+          },
+          "requireStandbyOnSet": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "parents": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entity"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityNodeProjection": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/EntityTypeId"
+          },
+          "jurisdiction": {
+            "$ref": "#/components/schemas/Jurisdiction"
+          },
+          "isCopy": {
+            "type": "boolean"
+          },
+          "isLeaf": {
+            "type": "boolean"
+          },
+          "instanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "parent": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntityNodeProjection"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntitySync": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "corridors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CorridorsSyncModel"
+            },
+            "nullable": true
+          },
+          "intersections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpatIntersectionModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityType": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemType": {
+            "type": "boolean"
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "copyable": {
+            "type": "boolean"
+          },
+          "movable": {
+            "type": "boolean"
+          },
+          "spatialType": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntityTypeSection"
+            },
+            "nullable": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityTypeAdd": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemType": {
+            "type": "boolean"
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "copyable": {
+            "type": "boolean"
+          },
+          "movable": {
+            "type": "boolean"
+          },
+          "spatialType": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntityTypeSection"
+            },
+            "nullable": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityTypeId": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityTypeSection": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntityTypeSection"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoJsonGeometry": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "radius": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "point": {
+            "$ref": "#/components/schemas/GeoJsonPointFeature"
+          },
+          "lineString": {
+            "$ref": "#/components/schemas/GeoJsonLineStringFeature"
+          },
+          "polygon": {
+            "$ref": "#/components/schemas/GeoJsonPolygonFeature"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoJsonLineStringFeature": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "nullable": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/GeoJsonProperties"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoJsonPointFeature": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/GeoJsonProperties"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoJsonPolygonFeature": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GeoSpatialType"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "nullable": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/GeoJsonProperties"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoJsonProperties": {
+        "type": "object",
+        "properties": {
+          "intersection": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "bearing": {
+            "$ref": "#/components/schemas/Bearing"
+          },
+          "origin": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "speedLimit": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "phases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PhaseModel"
+            },
+            "nullable": true
+          },
+          "tripPointLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TripPointLocation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoSpatialType": {
+        "enum": [
+          "None",
+          "Point",
+          "LineString",
+          "Polygon",
+          "Circle"
+        ],
+        "type": "string"
+      },
+      "IndexRequest": {
+        "type": "object",
+        "properties": {
+          "expandedEntityIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "InstanceRequest": {
+        "type": "object",
+        "properties": {
+          "instanceId": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "Jurisdiction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Movement": {
+        "enum": [
+          "Unknown",
+          "Left",
+          "Thru",
+          "Right"
+        ],
+        "type": "string"
+      },
+      "PavementConditionConfigAdd": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PavementConditionConfigDto": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PavementConditionConfigUpdate": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PavementConditionStatusDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/PavementConditionStatusSeverity"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PavementConditionStatusType"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PavementConditionStatusSeverity": {
+        "enum": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "type": "string"
+      },
+      "PavementConditionStatusType": {
+        "enum": [
+          "None",
+          "Bump",
+          "Pothole"
+        ],
+        "type": "string"
+      },
+      "PhaseModel": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "movement": {
+            "type": "string",
+            "nullable": true
+          },
+          "lanes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detectors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetectorModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PrivacyProviderType": {
+        "enum": [
+          "None",
+          "DES",
+          "AES",
+          "AES192",
+          "AES256"
+        ],
+        "type": "string"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Rsu": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "nullable": true
+          },
+          "snmpVersion": {
+            "$ref": "#/components/schemas/SnmpVersion"
+          },
+          "community": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "privacyPhrase": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextName": {
+            "type": "string",
+            "nullable": true
+          },
+          "retries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pollRate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxVariables": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authentication": {
+            "$ref": "#/components/schemas/AuthenticationProviderType"
+          },
+          "privacy": {
+            "$ref": "#/components/schemas/PrivacyProviderType"
+          },
+          "requireStandbyOnSet": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ScheduleTime": {
+        "type": "object",
+        "properties": {
+          "minutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seconds": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SnmpVersion": {
+        "enum": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "type": "string"
+      },
+      "SpatIntersectionModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "clarityId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "spatId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "controllerType": {
+            "type": "string",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Statement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "property": {
+            "$ref": "#/components/schemas/StatementProperty"
+          },
+          "entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/StatementSchedule"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StatementAction": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StatementProperty": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "comparator": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "cast": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StatementSchedule": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "times": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "in": {
+            "$ref": "#/components/schemas/ScheduleTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TripPointLocation": {
+        "type": "object",
+        "properties": {
+          "distance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "point": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TwilioConfigDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "format": "uuid"
+          },
+          "accountSid": {
+            "type": "string",
+            "description": "AccountSid",
+            "nullable": true
+          },
+          "authToken": {
+            "type": "string",
+            "description": "AuthToken",
+            "nullable": true
+          },
+          "senderPhone": {
+            "type": "string",
+            "description": "SenderPhone",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "TwilioConfigDto"
+      },
+      "WrongWayDriverConfigAdd": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WrongWayDriverConfigDto": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WrongWayDriverConfigUpdate": {
+        "type": "object",
+        "properties": {
+          "activeDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
